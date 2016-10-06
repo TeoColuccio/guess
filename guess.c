@@ -9,7 +9,7 @@ void guess_init()
 }
 int guess_extract()
 {
-  return random_extract(1, 1001);
+  return random_extract(1, 10);
 }
 char* guess_welcome()
 {

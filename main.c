@@ -10,20 +10,22 @@
 
 int main() {
 
-  int num, guess, scelta = 'y';
+  int num, guess;
+  char scelta = 'n';
 
   guess_init();
 
   do {
-       
+
     printf("%s\n", guess_welcome());
     num = guess_extract();
 
     do {
+      
       scanf("%d", &guess); /* Acquisisce il tentativo dell'utente */
     
-      if (guess >= 1 && guess < 1000) { /* Controlla se il numero inserito e' consentito */
-        
+      if (guess >= 1 && guess < 1000) { /* Controlla se il numero inserito e' consentito */  
+
         if (guess < num) {
           printf("%s\n", guess_low());
         }
@@ -36,8 +38,8 @@ int main() {
     } while (guess != num); /* Quando indovini esce dal ciclo */
     
       printf("%s\n", guess_victory());
-      scanf("%d", &scelta); /* Chiede se vuoi rigiocare */
-  } while (scelta != 'n'); /* Acquisisce la scelta */
+      scanf("%c\n", &scelta);
+  } while (scelta != 'n');
 
   return 0;
 }
