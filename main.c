@@ -5,20 +5,19 @@
  * raddrizzare la mira */
 
 #include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
+
+#include "guess.h"
 
 int main() {
 
   int num, guess, scelta = 'y';
 
-  srand(time(NULL));
+  guess_init();
 
   do {
-    
-    num = rand()%1000 + 1; /* Genera il numero casuale */
-    
-    printf("I have a number between 1 and 1000.\nCan you guess my number?\nPlease type your first guess.\n");
+       
+    printf("%s\n", guess_welcome());
+    num = guess_extract();
 
     do {
       scanf("%d", &guess); /* Acquisisce il tentativo dell'utente */
@@ -26,17 +25,17 @@ int main() {
       if (guess >= 1 && guess < 1000) { /* Controlla se il numero inserito e' consentito */
         
         if (guess < num) {
-          printf("Too low. Try again!\n"); /* Nel caso e' consentito ma troppo basso.. */
+          printf("%s\n", guess_low());
         }
         else if (guess > num) {
-          printf("Too high. Try again!\n"); /* Nel caso e' consentito ma troppo alto.. */
+          printf("%s\n", guess_high()); 
         }
       } else 
         printf("Il numero non e' consentito!\n"); /* Nel caso non e' consentito  */
     
     } while (guess != num); /* Quando indovini esce dal ciclo */
     
-      printf("Excellent! You guessed the number!\nWould you like to play again (y or n)?\n");
+      printf("%s\n", guess_victory());
       scanf("%d", &scelta); /* Chiede se vuoi rigiocare */
   } while (scelta != 'n'); /* Acquisisce la scelta */
 
