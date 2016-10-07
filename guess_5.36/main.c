@@ -10,7 +10,7 @@
 
 int main() {
 
-  int num, guess;
+  int num, guess, conta = 0;
   char scelta = 'n';
 
   guess_init();
@@ -34,12 +34,14 @@ int main() {
         }
       } else 
         printf("Il numero non e' consentito!\n"); /* Nel caso non e' consentito  */
-    
+        
+      conta++; /* Contatore dei tentativi */
     } while (guess != num); /* Quando indovini esce dal ciclo */
     
-      printf("%s\n", guess_victory());
+      printf("%s\n", guess_victory()); 
+      printf("%s\n", guess_count(conta));
       scanf("%c\n", &scelta);
   } while (scelta != 'n');
-
+    
   return 0;
 }

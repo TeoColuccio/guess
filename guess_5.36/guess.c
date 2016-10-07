@@ -27,3 +27,17 @@ char* guess_victory()
 {
   return "Excellent! You guessed the number!\nWould you like to play again (y or n)?";
 }
+char* guess_count(int conta)
+{
+  if (conta < 10) {
+    return "Either you know the secret or you got lucky!";
+  }
+  else if (conta > 10) {
+    return "You should be able to do better!";
+  }
+  else {
+    return "Ahah! You know the secret!";
+  }
+ 
+  return 0;
+}
