@@ -11,7 +11,7 @@
 int main() {
 
   int num, guess, conta = 0;
-  char scelta = 'n';
+  int scelta = 'n';
 
   guess_init();
 
@@ -38,9 +38,12 @@ int main() {
       conta++; /* Contatore dei tentativi */
     } while (guess != num); /* Quando indovini esce dal ciclo */
     
-      printf("%s\n", guess_victory()); 
       printf("%s\n", guess_count(conta));
-      scanf("%c\n", &scelta);
+      printf("%s\n", guess_victory()); 
+      /*scanf("%c\n", &scelta);*/
+      while ((scelta=getchar()) != '\n')
+        ;
+      scelta = getchar();
   } while (scelta != 'n');
     
   return 0;
