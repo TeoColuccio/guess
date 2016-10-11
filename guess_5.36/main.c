@@ -10,18 +10,19 @@
 
 int main() {
 
-  int num, guess, conta = 0;
+  int num, guess, conta;
   int scelta = 'n';
 
   guess_init();
 
   do {
-
+    
+    conta = 0;
     printf("%s\n", guess_welcome());
     num = guess_extract();
 
     do {
-      
+       
       scanf("%d", &guess); /* Acquisisce il tentativo dell'utente */
     
       if (guess >= 1 && guess < 1000) { /* Controlla se il numero inserito e' consentito */  
