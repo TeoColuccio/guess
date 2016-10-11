@@ -40,9 +40,9 @@ int main() {
     
       printf("%s\n", guess_count(conta));
       printf("%s\n", guess_victory()); 
-      /*scanf("%c\n", &scelta);*/
-      while ((scelta=getchar()) != '\n')
-        ;
+      
+      while ((scelta=getchar()) != '\n') {
+      }
       scelta = getchar();
   } while (scelta != 'n');
     
