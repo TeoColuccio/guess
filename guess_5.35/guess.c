@@ -7,9 +7,9 @@ void guess_init()
 {
   random_init();
 }
-int guess_extract()
+int guess_extract(int min, int max)
 {
-  return random_extract(1, 10);
+  return random_extract(min, max);
 }
 char* guess_welcome()
 {

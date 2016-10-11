@@ -18,7 +18,7 @@ int main() {
   do {
 
     printf("%s\n", guess_welcome());
-    num = guess_extract();
+    num = guess_extract(1, 1001);
 
     do {
       
@@ -38,7 +38,9 @@ int main() {
     } while (guess != num); /* Quando indovini esce dal ciclo */
     
       printf("%s\n", guess_victory());
-      scanf("%c\n", &scelta);
+      while((scelta = getchar()) != '\n') {
+      }
+      scelta = getchar();
   } while (scelta != 'n');
 
   return 0;

@@ -2,7 +2,7 @@
 #define GUESS_H
 
 void guess_init();
-int guess_extract();
+int guess_extract(int min, int max);
 char* guess_welcome();
 char* guess_high();
 char* guess_low();
